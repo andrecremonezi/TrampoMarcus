@@ -2,6 +2,8 @@ package com.projects.com.br.myapplication.Controllers.Activitys.Controllers;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -17,13 +19,14 @@ import com.projects.com.br.myapplication.R;
 /**
  * Created by c1284528 on 14/10/2015.
  */
-public class FormularioActivity extends Activity {
+public class FormularioActivity extends AppCompatActivity {
     private String[] tipos = new String[] {"Credito","Débito"};
     private EditText editTextDescricao;
     private EditText editTextvalor;
     private Spinner  spinnerTipo;
     private Despesa despesa;
     private Button buttonSalvar;
+    private Toolbar toolbar;
     public static final String PARAM_TASK = "PARAM_TASK";
 
 
@@ -34,8 +37,16 @@ public class FormularioActivity extends Activity {
         setContentView(R.layout.formulario_activity);
         initDespesa();
         bindFields();
+        bindToolbar();
         bindSpinnerTipo();
         bindButtonSalvar();
+    }
+
+    private void bindToolbar() {
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(R.string.label_main);
+        setSupportActionBar(toolbar);
+        setSupportActionBar(toolbar);
     }
 
     private void initDespesa() {

@@ -3,19 +3,32 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <RelativeLayout
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
     <TextView
         android:id="@+id/textViewValorTotal"
         android:text="Total"
         android:textSize="20dp"
+        android:layout_margin="15dp"
         android:textColor="#F44336"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <ListView
         android:id="@+id/listViewDespesas"
+        android:layout_below="@id/textViewValorTotal"
         android:layout_width="match_parent"
         android:background="#ffff"
         android:layout_height="wrap_content">
     </ListView>
 
+    </RelativeLayout>
 </LinearLayout>

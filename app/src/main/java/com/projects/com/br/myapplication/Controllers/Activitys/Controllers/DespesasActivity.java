@@ -5,6 +5,8 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,11 +26,13 @@ import java.util.List;
 /**
  * Created by c1284528 on 14/10/2015.
  */
-public class DespesasActivity extends Activity{
+public class DespesasActivity extends AppCompatActivity {
     private TextView valorTotal;
     private ListView listViewDespesa;
     private Despesa selectedDespesa;
     private List<Despesa> getDespesas;
+    private Toolbar toolbar;
+
 
     public DespesasActivity(){
         super();
@@ -39,7 +43,15 @@ public class DespesasActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.despesas_activity);
         bindListaDesepsa();
+        bindToolbar();
         bindFields();
+    }
+
+    private void bindToolbar() {
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(R.string.label_lista);
+        setSupportActionBar(toolbar);
+        setSupportActionBar(toolbar);
     }
 
     private void bindFields() {

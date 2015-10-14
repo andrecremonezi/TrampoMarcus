@@ -14,4 +14,6 @@
     <string name="lbl_no">Não</string>
     <string name="lbl_edit">Editar</string>
     <string name="lbl_delete">Deletar</string>
+    <string name="label_main">Nova Despesa</string>
+    <string name="label_lista">Despesas</string>
 </resources>

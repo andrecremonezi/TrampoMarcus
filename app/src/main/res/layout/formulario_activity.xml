@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_margin="10dp"
     android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <RelativeLayout
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <EditText
         android:id="@+id/editTextDescricao"
@@ -13,17 +21,20 @@
     <EditText
         android:id="@+id/editTextValor"
         android:hint="Valor"
+        android:layout_below="@id/editTextDescricao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <EditText
         android:id="@+id/editTextData"
         android:hint="Data"
+        android:layout_below="@id/editTextValor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <Spinner
         android:id="@+id/spinnerTipo"
+        android:layout_below="@id/editTextData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     </Spinner>
@@ -31,7 +42,8 @@
     <Button
         android:id="@+id/buttonSalvar"
         android:hint="Salvar"
+        android:layout_below="@id/spinnerTipo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-
+    </RelativeLayout>
 </LinearLayout>
